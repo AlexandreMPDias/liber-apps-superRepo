@@ -36,7 +36,8 @@
 			"$in": [
 				["fetch", ""],
 				["pull", ""],
-				["checkout:dev"]
+				["checkout:dev"],
+				["clone"]
 			],
 			"$scripts": {
 				"all": "run-s $1.native $1.containers $1.core $1.tutor $1.student"
