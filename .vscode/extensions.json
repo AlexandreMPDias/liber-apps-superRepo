@@ -1,0 +1,18 @@
+{
+	// See http://go.microsoft.com/fwlink/?LinkId=827846
+	// for the documentation about the extensions.json format
+	"recommendations": [
+		// TSX, TS Lint
+		"dbaeumer.vscode-eslint",
+		// Code Anchors
+		"exodiusstudios.comment-anchors",
+		// GitLens
+		"eamodio.gitlens",
+		// Commit Lint
+		"knisterpeter.vscode-commitizen",
+		// Icons
+		"vscode-icons-team.vscode-icons",
+		// Remote developement
+		"ms-vscode-remote.vscode-remote-extensionpack"
+	]
+}

@@ -1,0 +1,98 @@
+{
+	"git.ignoreLimitWarning": true,
+	"prettier.useTabs": true,
+	"editor.formatOnSave": true,
+	"prettier.tabWidth": 4,
+	"typescript.tsdk": "core/node_modules/typescript/lib",
+	"workbench.tree.indent": 16,
+	"workbench.list.horizontalScrolling": true,
+	"better-comments.multilineComments": true,
+	"files.exclude": {
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true,
+		"node_modules": true,
+		"*.{lock,}": true,
+		"lib": true,
+		"{tsconfig,bkup}.json": false,
+		"**/README.md": true,
+	},
+	"commentAnchors.tagHighlights.enabled": true,
+	"commentAnchors.workspace.excludeFiles": "**/{node_modules,.git,.idea,target,out,build,vendor,dist}/**/*",
+	"commentAnchors.parseDelay": 1000,
+	"commentAnchors.workspace.matchFiles": "**/*.{ts,tsx}",
+	"commentAnchors.tags.list": [
+		{
+			"tag": "TODO",
+			"scope": "file"
+		},
+		{
+			"tag": "[BUG]",
+			"iconColor": "red",
+			"highlightColor": "#e8092e",
+			"backgroundColor": "#471a22",
+			"scope": "workspace",
+			"styleComment": true,
+			"borderStyle": "1px solid #e8092e",
+			"borderRadius": 3
+		},
+		{
+			"tag": "[REGEXP]",
+			"iconColor": "red",
+			"highlightColor": "#e8092e",
+			"backgroundColor": "#471a22",
+			"scope": "file",
+			"styleComment": true,
+			"borderStyle": "1px solid #e8092e",
+			"borderRadius": 3
+		},
+		{
+			"tag": "[NOTE]",
+			"iconColor": "blue",
+			"highlightColor": "#6a8ef7",
+			"backgroundColor": "#041a1c",
+			"scope": "file",
+			"borderStyle": "1px solid #6a8ef7",
+			"borderRadius": 3
+		},
+		{
+			"tag": "[DELAYED]",
+			"iconColor": "yellow",
+			"highlightColor": "#ede615",
+			"backgroundColor": "#59570a",
+			"scope": "workspace",
+			"borderStyle": "1px solid #ede615",
+			"borderRadius": 3
+		},
+		{
+			"tag": "[WARNING]",
+			"iconColor": "orange",
+			"highlightColor": "#fc5a03",
+			"backgroundColor": "#451b04",
+			"scope": "file",
+			"borderStyle": "1px solid #fc5a03",
+			"borderRadius": 3
+		},
+		{
+			"tag": "[DEPRECRATED]",
+			"iconColor": "orange",
+			"highlightColor": "#fc5a03",
+			"backgroundColor": "#451b04",
+			"scope": "file",
+			"borderStyle": "1px solid #fc5a03",
+			"borderRadius": 3
+		},
+		{
+			"tag": "[TEMPORARY]",
+			"iconColor": "orange",
+			"highlightColor": "#ff9778",
+			"backgroundColor": "#361503",
+			"scope": "workspace",
+			"borderStyle": "1px dashed #ff9778",
+			"margin": "3px",
+			"borderRadius": 3
+		}
+	]
+}

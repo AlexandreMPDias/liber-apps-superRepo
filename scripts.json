@@ -1,0 +1,84 @@
+{
+	"clear": "run-p clear.core clear.native clear.containers clear.student clear.tutor clear.metro clear.watch",
+	"dev": "run-p dev.native dev.containers",
+	"delay": "node ./node_modules/.bin/npm-delay",
+	"clear.watch": "wml rm all && watchman watch-del-all",
+	"clear.metro": "rm -rf /tmp/metro-*",
+	"wml.backbone": "yarn wml.native && yarn wml.containers",
+	"$forEach": [
+		{
+			"$description": "Package installation commands",
+			"$in": [
+				["install"]
+			],
+			"$scripts": {
+				"backbone": "run-p $1.core $1.containers $1.native",
+				"all.tutor": "yarn $1.backbone && yarn $1.tutor",
+				"all.student": "yarn $1.backbone && yarn $1.student",
+				"all": "yarn $1.backbone && yarn $1.student && yarn $1.tutor"
+			}
+		},
+		{
+			"$description": "WML commands",
+			"$in": [
+				["native", "components-native", "core containers"],
+				["containers", "components-containers", "core"],
+				["student", "student-app",  "core containers native"],
+				["tutor", "tutor-app",  "core containers native"]
+			],
+			"$key": "{name}.$1",
+			"$scripts": {
+				"wml": "cd ./$2 && iml add $3"
+			}
+		},
+		{
+			"$description": "Git Commands (all)",
+			"$in": [
+				["fetch", ""],
+				["pull", ""],
+				["checkout:dev"]
+			],
+			"$scripts": {
+				"all": "run-s $1.native $1.containers $1.core $1.tutor $1.student"
+			}
+		},
+		{
+			"$description": "Module specific commands",
+			"$in": [
+				["native", "components-native"],
+				["containers", "components-containers"],
+				["core", "core"],
+				["student", "student-app"],
+				["tutor", "tutor-app"]
+				
+			],
+			"$key": "{name}.$1",
+			"$scripts": {
+				"clone": "git clone git@github.com:liberedu/$2",
+				"fetch": "cd ./$2 && git fetch -p",
+				"pull": "cd ./$2 && git pull",
+				"clear:modules": "rm -rf ./$2/node_modules ./$2/yarn.lock",
+				"clear:dist": "rm -rf ./$2/dist",
+				"install": "cd ./$2 && yarn install && cd ..",
+				"checkout:dev": "echo $1 && cd ./$2 && git checkout dev origin/dev && cd ..",
+				"": "yarn --cwd ./$2"
+			}
+		},
+		{
+			"$description": "Travel to module commands",
+			"$in": [
+				["native", "components-native"],
+				["containers", "components-containers"],
+				["core", "core"]
+				
+			],
+			"$key": "{name}.$1",
+			"$scripts": {
+				"dev": "yarn --cwd ./$2 dev",
+				"build": "yarn --cwd ./$2 build"
+			}
+		}
+	],
+	"compile": "node ./lib/compile/index.js ./scripts.json",
+	"build": "yarn tsc"
+}
