@@ -84,7 +84,8 @@
 		"dev": "run-p dev.native dev.containers",
 		"native": "yarn --cwd ./components-native",
 		"student": "yarn --cwd ./student-app",
-		"tutor": "yarn --cwd ./tutor-app"
+		"tutor": "yarn --cwd ./tutor-app",
+		"update": "git fetch -p && git pull && yarn build && yarn compile"
 	},
 	"author": "",
 	"license": "ISC"

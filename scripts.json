@@ -79,6 +79,7 @@
 			}
 		}
 	],
+	"update": "git fetch -p && git pull && yarn build && yarn compile",
 	"compile": "node ./lib/compile/index.js ./scripts.json",
 	"build": "yarn tsc"
 }
